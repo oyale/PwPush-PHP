@@ -1,0 +1,23 @@
+{
+    "name": "oyale/pwpush-php",
+    "description": "A PHP wrapper to easily push passwords to pwpush.com",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^7.4",
+        "justinrainbow/json-schema": "^5.2"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.4",
+        "filp/whoops": "^2.14"
+    },
+    "license": "LGPL-3.0",
+    "autoload": {
+        "psr-4": {
+            "oyale\\PwPush\\": "src/",
+            "oyale\\PwOps\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": "php tests/test.php"
+    }
+}
