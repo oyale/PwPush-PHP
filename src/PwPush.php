@@ -12,8 +12,7 @@ use GuzzleHttp\Client;
 class PwPush
 {
     private const  API_URI = "p.json";
-    private string $urlBase;
-    private string $url;
+    private string $urlBase = "https://pwpush.com";
     private string $payload;
     private ?array $options;
     private array  $optionsKeys = ['expire_after_days', 'expire_after_views', 'note', 'retrieval_step', 'deletable_by_viewer'];
@@ -32,10 +31,10 @@ class PwPush
     {
         $this->payload = $payload;
         $this->options = $options ?? null;
-        $this->urlBase = $urlBase ?? "https://pwpush.com";
+        $this->urlBase = $urlBase ?? $this->urlBase;
         $this->validate = $validate ?? false;
         if ($validate) {
-            $this->JSON = $this->constructJSON($this->payload, $this->options);
+            $this->JSON = $this->buildJSON($this->payload, $this->options);
         }
     }
 
@@ -64,7 +63,7 @@ class PwPush
      * Encode the payload + options array to JSON
      * @throws Exception
      */
-    private function constructJSON()
+    private function buildJSON()
     {
 
         return json_encode($this->getArray());
@@ -102,15 +101,15 @@ class PwPush
      */
     private function getArray(): array
     {
-        $json['payload'] = $this->payload;
+        $array['payload'] = $this->payload;
         if (!empty( $this->options)) {
             foreach ($this->optionsKeys as $key) {
                 if (is_null($this->options[$key])) {
                     continue;
                 }
-                $json['password'][$key] = $this->options[$key];
+                $array['password'][$key] = $this->options[$key];
             }
         }
-        return $json;
+        return $array;
     }
 }
