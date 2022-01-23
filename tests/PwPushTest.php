@@ -35,4 +35,10 @@ class PwPushTest extends TestCase
         $PwPush = PwPush::push('secret', ['ahcahasdasd' => '23432423423']);
         $this->assertContains('https://pwpush.com/p/', $PwPush);
     }
+
+    public function testItShouldValidateJSON()
+    {
+        $PwPush = PwPush::push('secret', ['ahcahasdasd' => '23432423423'],null,true);
+        $this->assertContains('https://pwpush.com/p/', $PwPush);
+    }
 }

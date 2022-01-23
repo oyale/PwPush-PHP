@@ -101,7 +101,7 @@ class PwPush
      */
     private function getArray(): array
     {
-        $array['payload'] = $this->payload;
+        $array['password']['payload'] = $this->payload;
         if (!empty( $this->options)) {
             foreach ($this->optionsKeys as $key) {
                 if (!isset($this->options[$key])){

@@ -1,3 +1,4 @@
-composer.lock
-vendor/
 .idea/
+composer.lock
+test.php
+vendor/

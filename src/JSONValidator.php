@@ -97,10 +97,11 @@ class JSONValidator
         $schemaStorage->addSchema('file://mySchema', $jsonSchemaObject);
         $jsonValidator = new Validator(new Factory($schemaStorage));
         $jsonToValidateObject = json_decode($validator->JSON);
-        $jsonValidator->validate($jsonToValidateObject, $jsonSchemaObject);
+        $validation = $jsonValidator->validate($jsonToValidateObject, $jsonSchemaObject);
 
         if (!$jsonValidator->isValid()) {
-            throw new Exception (json_encode($jsonValidator->getErrors));
+            var_dump($validation);
+            throw new Exception (json_encode($jsonValidator->getErrors()));
         }
         return true;
     }
