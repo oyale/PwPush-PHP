@@ -1,6 +1,6 @@
 <?php
 
-namespace oyale;
+namespace PwPush;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
@@ -21,7 +21,8 @@ class PwOps
      * @throws GuzzleException
      * @throws Exception
      */
-    public static function delete($id, $urlBase = null){
+    public static function delete($id, $urlBase = null): bool
+    {
         $PwOps = new self($id, $urlBase);
         $client = new Client([
             'base_uri' => $PwOps->urlBase,

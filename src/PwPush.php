@@ -1,6 +1,6 @@
 <?php
 
-namespace oyale;
+namespace PwPush;
 
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;

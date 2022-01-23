@@ -1,6 +1,6 @@
 <?php
 
-namespace oyale;
+namespace PwPush;
 
 use Exception;
 use JsonSchema\SchemaStorage;
@@ -14,7 +14,7 @@ use JsonSchema\Constraints\Factory;
 class JSONValidator
 {
     public string $JSON;
-    private string $scheme = <<<'JSON'
+    private string $jsonSchema = <<<'JSON'
                             {
                                 "definitions": {},
                                 "$schema": "http://json-schema.org/draft-07/schema#", 
