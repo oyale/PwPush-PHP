@@ -1,7 +1,6 @@
 <?php
 
 namespace PwPush;
-require_once('../src/PwPush.php');
 
 use GuzzleHttp\Exception\GuzzleException;
 use PHPUnit\Framework\TestCase;

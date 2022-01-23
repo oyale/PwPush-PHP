@@ -2,9 +2,6 @@
 
 namespace PwPush;
 use PHPUnit\Framework\TestCase;
-require_once ('../src/PwPush.php');
-require_once ('../src/PwOps.php');
-
 
 class PwOpsTest extends TestCase
 {

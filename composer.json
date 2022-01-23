@@ -4,22 +4,25 @@
     "type": "library",
     "require": {
         "guzzlehttp/guzzle": "^7.4",
-        "justinrainbow/json-schema": "^5.2",
-      "ext-json": "*"
+        "justinrainbow/json-schema": "^5.2"
     },
     "require-dev": {
         "symfony/var-dumper": "^5.4",
         "filp/whoops": "^2.14",
-        "phpunit/phpunit": "7"
+        "phpunit/phpunit": "^7"
     },
-    "license": "LGPL-3.0",
+    "license": "LGPL-3.0-or-later",
     "autoload": {
         "psr-4": {
-            "PwPush\\PwPush\\": "src/",
-            "PwPush\\PwOps\\": "src/"
+            "PwPush\\": "src/"
         }
     },
     "scripts": {
-        "test": "php tests/test.php"
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
     }
 }
