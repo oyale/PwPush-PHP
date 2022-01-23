@@ -1,7 +1,7 @@
 <?php
 
 namespace PwPush;
-require_once ('../src/PwPush.php');
+require_once('../src/PwPush.php');
 
 use GuzzleHttp\Exception\GuzzleException;
 use PHPUnit\Framework\TestCase;
@@ -18,7 +18,7 @@ class PwPushTest extends TestCase
     {
 
         $PwPush = PwPush::push('secret', null, $selfHostedInstance);
-        $this->assertContains($selfHostedInstance.'/p/', $PwPush);
+        $this->assertContains($selfHostedInstance . '/p/', $PwPush);
     }
 
     public function testItShouldFailToPushPasswordOnWrongURL()
@@ -31,12 +31,9 @@ class PwPushTest extends TestCase
 
     }
 
-    public function testItShouldFailToPushPasswordOnInvalidOptions()
+    public function testItShouldIgnoreInvalidOptions()
     {
-        try {
-            $PwPush = PwPush::push('secret', ['ahcahasdasd' => '23432423423']);
-        }catch (\Exception $e) {
-            $this->assertContains("Option 'expire_after_days' not found", $e->getMessage());
-        }
+        $PwPush = PwPush::push('secret', ['ahcahasdasd' => '23432423423']);
+        $this->assertContains('https://pwpush.com/p/', $PwPush);
     }
 }
