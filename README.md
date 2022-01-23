@@ -6,7 +6,7 @@
 
 ## Install
 ```bash
-//TODO
+composer require oyale/pwpush-php
 ```
 
 ## Usage
