@@ -104,6 +104,9 @@ class PwPush
         $array['payload'] = $this->payload;
         if (!empty( $this->options)) {
             foreach ($this->optionsKeys as $key) {
+                if (!isset($this->options[$key])){
+                    throw new Exception("Option '$key' not found");
+                }
                 if (is_null($this->options[$key])) {
                     continue;
                 }
