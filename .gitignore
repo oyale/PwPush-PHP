@@ -1,4 +1,4 @@
 .idea/
 composer.lock
-test.php
+/tests/test.php
 vendor/
