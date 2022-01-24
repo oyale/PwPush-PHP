@@ -8,23 +8,31 @@ use PHPUnit\Framework\TestCase;
 class PwPushTest extends TestCase
 {
     public string $secret;
+
     public function testItShouldPushPasswordToDefaultInstance()
     {
-        $this->secret =  bin2hex(random_bytes(20));
+        $this->secret = bin2hex(random_bytes(20));
         $PwPush = PwPush::push($this->secret);
         $this->assertStringContainsString('https://pwpush.com/p/', $PwPush);
     }
 
     public function testItShouldPushPasswordToSelfHostedInstance($selfHostedInstance = 'https://pwp-stage.herokuapp.com/')
     {
-        $this->secret =  bin2hex(random_bytes(20));
+        $this->secret = bin2hex(random_bytes(20));
         $PwPush = PwPush::push($this->secret, null, $selfHostedInstance);
         $this->assertStringContainsString($selfHostedInstance . '/p/', $PwPush);
     }
 
-    public function testItShouldFailToPushPasswordOnWrongURL()
+    public function testItShouldPushPasswordWithOptions()
     {
-        $this->secret =  bin2hex(random_bytes(20));
+        $this->secret = bin2hex(random_bytes(20));
+        $PwPush = PwPush::push($this->secret, ['expire_after_days' => '15', 'retrieval_step' => "true"]);
+        $this->assertStringContainsString('https://pwpush.com/p/', $PwPush);
+    }
+
+    public function testItShouldFailToPushPasswordOnWrongUrl()
+    {
+        $this->secret = bin2hex(random_bytes(20));
         try {
             $PwPush = PwPush::push($this->secret, null, 'https://example.com');
         } catch (GuzzleException $e) {
@@ -33,17 +41,17 @@ class PwPushTest extends TestCase
 
     }
 
-    public function testItShouldIgnoreInvalidOptions()
+    public function testItShouldIgnoreInvalidAndNullOptions()
     {
-        $this->secret =  bin2hex(random_bytes(20));
-        $PwPush = PwPush::push($this->secret, ['ahcahasdasd' => '23432423423']);
+        $this->secret = bin2hex(random_bytes(20));
+        $PwPush = PwPush::push($this->secret, [null => '23432423423', 'retrieval_step' => null, 'test' => 'test']);
         $this->assertStringContainsString('https://pwpush.com/p/', $PwPush);
     }
 
-    public function testItShouldValidateJSON()
+    public function testItShouldValidateJson()
     {
-        $this->secret =  bin2hex(random_bytes(20));
-        $PwPush = PwPush::push($this->secret, ['ahcahasdasd' => '23432423423'],null,true);
+        $this->secret = bin2hex(random_bytes(20));
+        $PwPush = PwPush::push($this->secret, ['ahcahasdasd' => '23432423423'], null, true);
         $this->assertStringContainsString('https://pwpush.com/p/', $PwPush);
     }
 }
