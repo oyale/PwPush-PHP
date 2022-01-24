@@ -100,7 +100,6 @@ class JSONValidator
         $validation = $jsonValidator->validate($jsonToValidateObject, $jsonSchemaObject);
 
         if (!$jsonValidator->isValid()) {
-            var_dump($validation);
             throw new Exception (json_encode($jsonValidator->getErrors()));
         }
         return true;
