@@ -1,4 +1,5 @@
 [![PHPUnit](https://github.com/oyale/PwPush-PHP/actions/workflows/php.yml/badge.svg)](https://github.com/oyale/PwPush-PHP/actions/workflows/php.yml)
+[![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/oyale/PwPush-PHP/releases)
 # PwPush-PHP
 
 > A PHP library wrapper to easily push passwords to any [PasswordPusher](https://github.com/pglombardo/PasswordPusher) instance
@@ -76,6 +77,9 @@ Type: `string`
 URL of PwPush instance \
 Type: `string` \
 Default value: `https://pwpush.com`
+
+## Examples
+You can see a complete workflow example in [examples/workflow.php](examples/workflow.php)
 
 ## License
 [LGPL-3.0](LICENSE)
