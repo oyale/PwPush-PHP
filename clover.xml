@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1643066300">
-  <project timestamp="1643066300">
+<coverage generated="1643067947">
+  <project timestamp="1643067947">
     <file name="/home/runner/work/PwPush-PHP/PwPush-PHP/src/JSONValidator.php">
       <class name="PwPush\JSONValidator" namespace="global">
         <metrics complexity="3" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="11" elements="14" coveredelements="12"/>
