@@ -1,3 +1,4 @@
+[![PHPUnit](https://github.com/oyale/PwPush-PHP/actions/workflows/php.yml/badge.svg)](https://github.com/oyale/PwPush-PHP/actions/workflows/php.yml)
 # PwPush-PHP
 
 > A PHP library wrapper to easily push passwords to any [PasswordPusher](https://github.com/pglombardo/PasswordPusher) instance
