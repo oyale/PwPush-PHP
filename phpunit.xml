@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="vendor/autoload.php" colors="true" verbose="true" stopOnFailure="false" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
-  <coverage includeUncoveredFiles="true" processUncoveredFiles="true">
+  <coverage includeUncoveredFiles="false" processUncoveredFiles="false">
     <include>
       <directory suffix=".php">src</directory>
     </include>
-    <exclude>
-      <directory suffix=".php">src/generated</directory>
-      <file>src/autoload.php</file>
-    </exclude>
     <report>
       <clover outputFile="clover.xml"/>
     </report>

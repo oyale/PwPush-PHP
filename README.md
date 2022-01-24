@@ -1,5 +1,5 @@
-[![PHPUnit](https://github.com/oyale/PwPush-PHP/actions/workflows/php.yml/badge.svg)](https://github.com/oyale/PwPush-PHP/actions/workflows/php.yml)
-[![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/oyale/PwPush-PHP/releases)
+[![PHPUnit](https://github.com/oyale/PwPush-PHP/actions/workflows/php.yml/badge.svg)](https://github.com/oyale/PwPush-PHP/actions/workflows/php.yml) [![Test Coverage](https://raw.githubusercontent.com/oyale/PwPush-PHP/main/badge-coverage.svg)](https://packagist.org/packages/oyale/pwpush-php)
+[![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/oyale/PwPush-PHP/releases) 
 # PwPush-PHP
 
 > A PHP library wrapper to easily push passwords to any [PasswordPusher](https://github.com/pglombardo/PasswordPusher) instance
